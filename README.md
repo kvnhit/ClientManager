@@ -12,6 +12,7 @@ ClienteManager é uma aplicação MVC desenvolvida em ASP.NET Core para gerencia
 
 - Executar o script de criação de banco de dados e tabela de clientes. 
 - Após isso, inserir a string de conexão correta no arquivo appsettingjson.json e appsettingjson.Development.json dentro de ClientManager.API.
+- Ir em propriedades da solução > Startup Project => selecionar 'Multiple startup projects' e mudar a action de ClientManager.API e ClientManager.MVC para 'Start' para iniciar os projetos da API e MVC.
 - Verificar pacotes do NuGet em caso de falha, caso seja necessário um 'Restore'.
 
 ## Funcionalidades
