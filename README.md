@@ -8,6 +8,8 @@ ClienteManager é uma aplicação MVC desenvolvida em ASP.NET Core para gerencia
 
 ### Custei um tempo considerável pois fiz do zero, o que acabou fazendo com que eu não tivesse tempo suficiente para validações, testes unitários e demais detalhes. De qualquer forma, muito obrigado.
 
+### Senha de login mockada: usuario: admin, senha: admin.
+
 ## Instruções
 
 - Executar o script de criação de banco de dados e tabela de clientes. 
