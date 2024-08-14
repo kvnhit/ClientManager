@@ -1,0 +1,98 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .inputBox {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+            .inputBox input {
+                width: 100%;
+                padding: 10px;
+                background: #f0f0f0;
+                border: none;
+                outline: none;
+                font-size: 16px;
+                border-radius: 4px;
+            }
+
+            .inputBox i {
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-style: normal;
+                color: #777;
+                transition: 0.5s;
+                pointer-events: none;
+            }
+
+            .inputBox input:focus + i,
+            .inputBox input:not(:placeholder-shown) + i {
+                top: -10px;
+                left: 10px;
+                color: #333;
+                font-size: 12px;
+            }
+
+            .inputBox input[type="submit"] {
+                background: #007bff;
+                color: white;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+                .inputBox input[type="submit"]:hover {
+                    background: #0056b3;
+                }
+
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <form asp-action="Login" id="loginForm">
+            <div class="inputBox">
+                <input type="text" name="username" required>
+                <i>Usuário</i>
+            </div>
+            <div class="inputBox">
+                <input type="password" name="password" required>
+                <i>Senha</i>
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
