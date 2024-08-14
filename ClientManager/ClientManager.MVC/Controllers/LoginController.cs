@@ -25,6 +25,15 @@ namespace ClientManager.MVC.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            var cookieValue = ReadCookie();
+            if (cookieValue != null)
+            {
+                var credentials = cookieValue.Split(':');
+                var usuario = credentials[0];
+                var senha = credentials[1];
+
+                return RedirectToAction("Index", "ClientManager");
+            }
             return View();
         }
         [HttpPost]
@@ -43,6 +52,7 @@ namespace ClientManager.MVC.Controllers
                 {
                     TempData["successMessage"] = "Login efetuado com sucesso";
                     var token = await response.Content.ReadAsStringAsync();
+                    MakeCookie(model.Username, model.Password);
                     return RedirectToAction("Index", "ClientManager");
                 }
                 else
@@ -57,6 +67,31 @@ namespace ClientManager.MVC.Controllers
             {
                 TempData["errorMessage"] = ex.Message;
                 return View();
+            }
+        }
+
+        private void MakeCookie(string username, string password)
+        {
+            var cookieOptions = new CookieOptions
+            {
+                Expires = DateTime.Now.AddMinutes(2),
+                HttpOnly = true, 
+                Secure = true, 
+                SameSite = SameSiteMode.Strict 
+            };
+
+            HttpContext.Response.Cookies.Append("ClientCookie", $"{username}:{password}", cookieOptions);
+        }
+
+        private string ReadCookie()
+        {
+            try
+            {
+                return HttpContext.Request.Cookies["ClientCookie"];
+            }
+            catch
+            {
+                return null;
             }
         }
     }

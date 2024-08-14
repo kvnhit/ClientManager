@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ClienteManager.Core.Entities;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -13,7 +14,7 @@ namespace ClientManager.API.Controllers
         public IActionResult Login([FromBody] Login loginRequest)
         {
             // Mock - Credenciais Simuladas
-            if (loginRequest.Username == "admin" && loginRequest.Password == "password1234")
+            if (loginRequest.Username == "admin" && loginRequest.Password == "admin")
             {
                 var token = GenerateJwtToken(loginRequest.Username);
                 return Ok(new { token });
@@ -43,10 +44,5 @@ namespace ClientManager.API.Controllers
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-    }
-    public class Login
-    {
-        public string Username { get; set; }
-        public string Password { get; set; }
     }
 }

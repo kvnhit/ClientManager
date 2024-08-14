@@ -11,49 +11,63 @@ namespace ClientManager.MVC.Models
         [DisplayName("CPF")]
         public string CPF { get; set; }
 
+        [Required]
         [DisplayName("Nome")]
         public string Nome { get; set; }
 
+        [Required]
         [DisplayName("RG")]
         public string RG { get; set; }
 
+        [Required]
         [DisplayName("Data Expedição")]
         public DateTime DataExpedicao { get; set; }
 
-        [DisplayName("Órgao Expedição")]
+        [Required]
+        [DisplayName("Órgao Expeditor")]
         public string OrgaoExpedicao { get; set; }
 
-        [DisplayName("UF Órgão")]
+        [Required]
+        [DisplayName("UF")]
         public string UfOrgao { get; set; }
 
+        [Required]
         [DisplayName("Data Nascimento")]
         public DateTime DataNascimento { get; set; }
 
+        [Required]
         [DisplayName("Sexo")]
         public string Sexo { get; set; }
 
+        [Required]
         [DisplayName("Estado Civil")]
         public string EstadoCivil { get; set; }
 
-        [DisplayName("Cep")]
+        [Required]
+        [DisplayName("CEP")]
         public string Cep { get; set; }
 
+        [Required]
         [DisplayName("Logradouro")]
         public string Logradouro { get; set; }
 
+        [Required]
         [DisplayName("Número")]
         public string Numero { get; set; }
 
         [DisplayName("Complemento")]
         public string? Complemento { get; set; }
 
+        [Required]
         [DisplayName("Bairro")]
         public string Bairro { get; set; }
 
+        [Required]
         [DisplayName("Cidade")]
         public string Cidade { get; set; }
 
-        [DisplayName("UF Endereço")]
+        [Required]
+        [DisplayName("UF")]
         public string UfEndereco { get; set; }
     }
 }

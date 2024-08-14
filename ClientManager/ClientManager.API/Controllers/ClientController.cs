@@ -1,5 +1,4 @@
-﻿using ClientManager.API.Models;
-using ClientManager.Application.Commands.CreateClient;
+﻿using ClientManager.Application.Commands.CreateClient;
 using ClientManager.Application.Commands.DeleteClient;
 using ClientManager.Application.Commands.UpdateClient;
 using ClientManager.Application.Queries.GetAllClients;
